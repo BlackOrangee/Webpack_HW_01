@@ -1,0 +1,763 @@
+// Import libraries css
+
+// Global styles for the app
+@import 'style/global/fonts';
+@import 'style/global/variables';
+@import 'style/global/mixins';
+
+// Local styles for pages and components
+@import url('./style/pages/_about.scss');
+
+
+// Reset
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+// Variables
+$Yellow: #F2C94C;
+$Gray-1: #333;
+$Gray-6: #F2F2F2;
+$max-width: 100%;
+$logoImageSize: 202px;
+$logoCubeSize: 128px;
+
+// General Styles
+.container {
+    margin: 0 26px;
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+    background-color: rgba(15, 0, 4, 0.89);
+    backdrop-filter: blur(10.5px);
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    > div {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.header__menu {
+    width: 24px;
+    height: 24px;
+}
+
+// Navigation
+.header__logo {
+    position: absolute;
+    top: 28px;
+    left: calc((#{$max-width} / 2) - (#{$logoCubeSize} / 2));
+
+    div {
+        max-width: #{$logoCubeSize};
+        min-width: #{$logoCubeSize};
+        max-height: #{$logoCubeSize};
+        min-height: #{$logoCubeSize};
+        transform: rotate(-45deg);
+        border-radius: 10px;
+        background: #2B0303;
+    }
+
+    img {
+        transform: rotate(45deg);
+        width: #{$logoImageSize};
+        height: #{$logoImageSize};
+        position: absolute;
+        top: calc(50% - (#{$logoImageSize} / 2));
+        left: calc(50% - (#{$logoImageSize} / 2));
+    }
+}
+
+.header__buttons a {
+    text-decoration: none;
+    color: $Yellow;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: 1.5px solid $Yellow;
+    transition: 0.4s;
+    margin-right: 24px;
+
+    &:hover {
+        color: $Gray-1;
+        background: $Yellow;
+    }
+}
+
+#phoneLoginButton {
+    display: none;
+}
+
+// Main Tabs
+.main__tabs {
+    display: flex;
+    flex-wrap: wrap;
+
+    > label {
+        order: 1;
+        display: block;
+        margin-right: 0.2rem;
+        cursor: pointer;
+        font-weight: bold;
+        color: #FFF;
+        font-family: Montserrat;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+}
+
+.casino {
+    position: absolute;
+    top: 42px;
+    left: 94px;
+}
+
+.casino-line {
+    width: 22px;
+    height: 3px;
+    border-radius: 40px;
+    background: var(--Yellow, #F2C94C);
+    position: absolute;
+    top: 70px;
+    left: 112px;
+}
+
+.liveCasino {
+    position: absolute;
+    top: 42px;
+    left: 182px;
+}
+
+.liveCasino-line {
+    width: 42px;
+    height: 3px;
+    border-radius: 40px;
+    background: var(--Yellow, #F2C94C);
+    position: absolute;
+    top: 70px;
+    left: 210px;
+}
+
+.games {
+    position: absolute;
+    top: 42px;
+    left: 306px;
+}
+
+.games-line {
+    width: 22px;
+    height: 3px;
+    border-radius: 40px;
+    background: var(--Yellow, #F2C94C);
+    position: absolute;
+    top: 70px;
+    left: 320px;
+}
+
+.main__tabs .main__tabs_tab {
+    order: 99;
+    flex-grow: 1;
+    width: 100%;
+    display: none;
+    background: #fff;
+}
+
+.main__tabs {
+    > input[type="radio"] {
+        display: none;
+    }
+
+    > input[type="radio"]:checked + label {
+        color: var(--Yellow, #F2C94C);
+        font-family: Montserrat;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    > input[type="radio"]:checked + label + .main__tabs_tab {
+        display: block;
+    }
+}
+
+.slider {
+    width: 100%;
+    height: 548px;
+    background-image: url(/src/assets/img/slider-image.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    > p {
+        width: 613px;
+        color: #FFF;
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 133.9%;
+        letter-spacing: 1.28px;
+        margin-bottom: 62px;
+    
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--Gray-1, #333);
+        font-family: Montserrat;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+    
+        padding: 12px 20px;
+        border-radius: 10px;
+        background: var(--Yellow, #F2C94C);
+    }
+}
+
+.slider__title {
+    p {
+        color: #FFF;
+        font-family: Montserrat;
+        font-size: 48px;
+        font-weight: 300;
+        line-height: 133.9%;
+        letter-spacing: 6.24px;
+        padding-top: 100px;
+        margin-bottom: 8px;
+    }
+
+    h1 {
+        color: var(--Yellow, #F2C94C);
+        font-family: Montserrat;
+        font-size: 48px;
+        font-weight: 800;
+        line-height: 133.9%;
+        letter-spacing: 6.24px;
+        margin-bottom: 36px;
+    }
+}
+
+/* SEARCH BOX */
+#search {
+
+    position: absolute;
+    right: 24px;
+    top: 28px;
+    display: flex;
+    align-items: center;
+
+    width: 354px;
+    height: 60px;
+    border-radius: 10px;
+    background: #183A50;
+    box-shadow: 0px 20px 30px -8px rgba(0, 0, 0, 0.21);
+
+    img {
+        width: 24px;
+        height: 24px;
+        opacity: 0.3;
+        margin-left: 24px;
+    }
+
+    input {
+        display: block;
+        background: #183A50;
+        width: 78%;
+        height: 100%;
+        margin-left: 16px;
+        border: none;
+    
+        color: #FFF;
+        font-family: Montserrat;
+        font-size: 20px;
+    }
+}
+
+/* TABS */
+.casino__tabs {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #112B3C;
+    position: relative;
+    top: -1px;
+
+    label {
+        order: 1;
+        display: block;
+        cursor: pointer;
+        color: #FFF;
+        font-family: Montserrat;
+        font-size: 20px;
+        font-weight: 400;
+        margin: 42px 0 80px 32px;
+    }
+
+    .casino__tabs_tab {
+        order: 99;
+        flex-grow: 1;
+        width: 100%;
+        display: none;
+        background: #fff;
+    }
+
+    input[type="radio"] {
+        display: none;
+    }
+
+    input[type="radio"]:checked+label {
+        color: var(--Yellow, #F2C94C);
+        font-family: Montserrat;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    input[type="radio"]:checked+label+.casino__tabs_tab {
+        display: block;
+    }
+}
+
+.Featured-line {
+    position: absolute;
+    width: 116px;
+    height: 2px;
+    background: #F2C94C;
+
+    left: 24px;
+    top: 82px;
+}
+
+.casino__tabs_line {
+    width: 717px;
+    height: 2px;
+    opacity: 0.3;
+    background: #F2F2F2;
+    position: absolute;
+    top: 82px;
+    left: 24px;
+}
+
+.Slots-line {
+    position: absolute;
+    width: 80px;
+    height: 2px;
+    background: #F2C94C;
+
+    left: 140px;
+    top: 82px;
+}
+
+.TableGames-line {
+    position: absolute;
+    width: 162px;
+    height: 2px;
+    background: #F2C94C;
+
+    left: 220px;
+    top: 82px;
+}
+
+.New-line {
+    position: absolute;
+    width: 76px;
+    height: 2px;
+    background: #F2C94C;
+
+    left: 382px;
+    top: 82px;
+}
+
+.ScratchCards-line {
+    position: absolute;
+    width: 174px;
+    height: 2px;
+    background: #F2C94C;
+
+    left: 458px;
+    top: 82px;
+}
+
+.Jackpots-line {
+    position: absolute;
+    width: 108px;
+    height: 2px;
+    background: #F2C94C;
+
+    left: 632px;
+    top: 82px;
+}
+
+/* GRID */
+#aditionCard {
+    display: none;
+}
+
+.casino__tabs_tab_grid {
+    background-color: #112B3C;
+    padding: 0 24px;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: minmax(256px, auto);
+    height: 100%;
+
+    div {
+        background-color: rgba(17, 43, 60, 0.76);
+        width: 100%;
+        height: 47px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    h5 {
+        color: var(--Yellow, #F2C94C);
+        font-family: Montserrat;
+        font-size: 15px;
+        font-weight: 700;
+        margin-top: 10px;
+        margin-bottom: 2px;
+        margin-left: 14px;
+    }
+
+    p {
+        color: var(--Gray-6, #F2F2F2);
+        font-family: Montserrat;
+        font-size: 10px;
+        font-weight: 600;
+        margin-left: 14px;
+    }
+
+    a:nth-child(5) {
+        grid-column: 5 / 7;
+        grid-row: 1 / 3;
+    }
+
+    a:nth-child(10) {
+        grid-column: 1 / 3;
+        grid-row: 3 / 5;
+    }
+
+    a:nth-child(16) {
+        grid-area: 4 / 4 / 6 / 6;
+    }
+
+    a {
+        height: 100%;
+        width: 100%;
+    
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        border-radius: 10px;
+    }
+}
+
+.casino__tabs_tab_undergrid {
+    background: #112B3C;
+    width: 100%;
+    height: 190px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#ViewMore {
+    text-decoration: none;
+    color: var(--Yellow, #F2C94C);
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: 1.5px solid var(--Yellow, #F2C94C);
+    margin-top: 50px;
+
+    &:hover {
+        color: var(--Gray-1, #333);
+        background: var(--Yellow, #F2C94C);
+    }
+}
+
+// Footer
+footer {
+    background-color: #112B3C;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    > div {
+        margin-top: 188px;
+        width: 100%;
+        height: 521px;
+        opacity: 0.8;
+        background-color: lightgray 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .footer__partners {
+        display: flex;
+        gap: 40px;
+
+        div {
+            width: 100px;
+            height: 100px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 50%;
+        }
+    }
+
+    p {
+        color: #FFF;
+        text-align: center;
+        font-family: Montserrat;
+        font-size: 16px;
+        line-height: 146.9%;
+        letter-spacing: -0.8px;
+        width: 916px;
+    }
+}
+
+
+// Media Queries
+@media screen and (max-width: 1120px) {
+    .casino__tabs_tab_grid {
+        padding-top: 50px;
+    }
+
+    #search {
+        top: 110px;
+    }
+
+    .casino__tabs_tab_grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .casino__tabs_tab_grid a:nth-child(5) {
+        grid-column: 4 / 6;
+        grid-row: 1 / 3;
+    }
+}
+
+@media screen and (max-width: 1010px) {
+    .games,
+    .games-line { 
+        display: none !important;
+    }
+
+    .casino__tabs_tab_grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .casino__tabs_tab_grid a:nth-child(5) {
+        grid-column: 4;
+        grid-row: 1;
+    }
+
+    .casino__tabs_tab_grid a:nth-child(10) {
+        grid-column: 1 / 3;
+        grid-row: 3 / 5;
+    }
+
+    .casino__tabs_tab_grid a:nth-child(16) {
+        grid-area: 6 / 3 / 8 / 5;
+    }
+
+    #aditionCard {
+        display: flex;
+    }
+
+    footer p {
+        width: 716px;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .header__buttons a {
+        display: none;
+    }
+
+    .header__buttons a:hover {
+        color: none;
+        background: none;
+    }
+    
+    #phoneLoginButton {
+        display: flex;
+    }
+
+    .Jackpots-line,
+    .Jackpots,
+    .liveCasino,
+    .casino,
+    .liveCasino-line,
+    .casino-line {
+        display: none !important;
+    }
+
+    .casino__tabs_line {
+        width: 608px;
+    }
+
+    .casino__tabs_tab_grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .casino__tabs_tab_grid a:nth-child(5) {
+        grid-column: 3;
+        grid-row: 1;
+    }
+
+    .casino__tabs_tab_grid a:nth-child(16) {
+        grid-area: 6 / 2 / 8 / 4;
+    }
+
+    #aditionCard {
+        display: none;
+    }
+
+    footer p {
+        width: 516px;
+    }
+
+    .slider {
+        height: 700px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .slider__title p,
+    .slider__title h1 {
+        text-align: center;
+    }
+    
+    .slider>p {
+        padding-top: 160px;
+        width: 400px;
+        text-align: center;
+    }
+
+    #search {
+        width: 93%;
+        height: 60px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .ScratchCards-line,
+    .ScratchCards {
+        display: none !important;
+    }
+	 
+    .casino__tabs_line {
+        width: 434px;
+    }   
+
+    .casino__tabs_tab_grid {
+        grid-auto-rows: minmax(200px, auto);
+    }
+
+    #search {
+        width: 90%;
+        height: 60px;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .casino__tabs_tab_grid {
+        grid-auto-rows: minmax(200px, auto);
+    }
+
+    footer p {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .casino__tabs_tab_grid div {
+        height: 60px;
+    }
+
+    .New-line,
+    .New {
+        display: none !important;
+    }
+
+    .casino__tabs_line {
+        width: 358px;
+    }
+
+    .casino__tabs_tab_grid {
+        grid-auto-rows: minmax(150px, auto);
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .TableGames,
+    .TableGames-line {
+        display: none !important;
+    }
+	
+    .casino__tabs_line {
+        width: 196px;
+    }
+
+    .casino__tabs_tab_grid {
+        grid-auto-rows: minmax(150px, auto);
+    }
+
+    .slider>p {
+        padding-top: 00px;
+        width: 200px;
+    }
+
+    footer p {
+        width: 200px;
+    }
+
+    .footer__partners {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    footer>div {
+        height: 1200px;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    :root {
+        --logoImageSize: 101px;
+        --logoCubeSize: 64px;
+    }
+
+    .header__logo {
+        top: 70px;
+    }
+}
